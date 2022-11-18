@@ -656,8 +656,7 @@ void Materializer::AttachSpecularGlossinessTextureInput(
       pbr_shader->CreateInput(kTokInputMetallic, SdfValueTypeNames->Float)
           .Set(uvsets_valid ? metal : kFallbackMetallic);
       pbr_shader->CreateInput(kTokInputRoughness, SdfValueTypeNames->Float)
-          .Set(uvsets_valid ? 1.0f - spec_gloss.glossinessFactor
-                            : kFallbackRoughness);
+          .Set(uvsets_valid ? 1.0f : kFallbackRoughness);
       return;
     }
 
